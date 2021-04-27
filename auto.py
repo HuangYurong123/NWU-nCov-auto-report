@@ -12,7 +12,7 @@ import argparse
 #Settings aera
 
 #登陆模式
-auth_mode = "PASSWORD"  #1:PASSWORD 2:COOKIES
+auth_mode = "1"  #1:PASSWORD 2:COOKIES
 
 #统一身份认证账号密码，仅在“PASSWORD”认证模式下需要
 stu_id = ""
@@ -301,7 +301,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     #print("Inpute：", args)
 
-    if args.cli==True:
+    if args.cli==False:
         print("Load settings from CLI args...")
         auth_mode = args.auth_mode
         stu_id = args.username
