@@ -142,7 +142,7 @@ def get_cookies(username='2015000001',password='123456abc'):
 
     #return
 """
-"""
+
     # encrypt passwd ans create params
     #aes_key = "6cYJKrJBZAQzCtr9".encode('utf-8')
     aes_iv = b"6cYJKrJBZAQzCtr9"
@@ -152,7 +152,7 @@ def get_cookies(username='2015000001',password='123456abc'):
     if debug_mode:
         print("Salt: "+aes_key.decode())
         print("Salted password: "+salted_pwd)
-"""    
+    
     #return
     params = {
         "username":username,
