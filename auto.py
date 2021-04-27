@@ -78,7 +78,7 @@ custom_params = [
 log = ""
 
 
-
+"""
 # costum padding for AES-128 (16 byte) (useless)
 def add_to_16(text):
     if len(text.encode('utf-8')) % 16:
@@ -110,7 +110,7 @@ def encrypt(text,key,iv):
     res = res.replace("\n","")
     return res
 
-
+"""
 
 # Login functions
 def get_cookies(username='2015000001',password='123456abc'):
@@ -141,6 +141,7 @@ def get_cookies(username='2015000001',password='123456abc'):
 
     #return
     
+    """
     # encrypt passwd ans create params
     #aes_key = "6cYJKrJBZAQzCtr9".encode('utf-8')
     aes_iv = b"6cYJKrJBZAQzCtr9"
@@ -162,7 +163,8 @@ def get_cookies(username='2015000001',password='123456abc'):
         "_eventId":"submit",
         "rmShown":"1"
     }
-
+"""
+    
     if debug_mode:
         print(params)
 
