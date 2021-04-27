@@ -164,7 +164,7 @@ def get_cookies(username='2015000001',password='123456abc'):
         "rmShown":"1"
     }
 """
-    
+"""    
     if debug_mode:
         print(params)
 
@@ -253,7 +253,7 @@ def sent_report(cookies):
     log = log + "\n" + "填报返回结果："+json_res['m']
 
     return json_res['m']
-
+"""
 
 def main(username='',password=''):
 
