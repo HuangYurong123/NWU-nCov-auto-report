@@ -269,7 +269,7 @@ def main(username='',password=''):
     else:
         print("[ERROR] Unknow auth mode")
         return "Unknow auth mode"
-    
+"""      
     if len(cookies_res)<=0:
         print("[ERROR] Terminated...")
         return "Cookies 无效"
@@ -289,7 +289,7 @@ def main(username='',password=''):
             else:
                 print("\n[ERROR] [FINAL] 超过最大重试次数，填报失败！")
 
-
+"""
 
 if __name__ == "__main__":
     
