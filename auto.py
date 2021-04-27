@@ -67,7 +67,7 @@ custom_params = [
 log = ""
 
 
-
+"""
 # costum padding for AES-128 (16 byte) (useless)
 def add_to_16(text):
     if len(text.encode('utf-8')) % 16:
@@ -98,7 +98,7 @@ def encrypt(text,key,iv):
     res = base64.encodebytes(cipher_text).decode()
     res = res.replace("\n","")
     return res
-
+"""
 
 
 # Login functions
@@ -115,7 +115,7 @@ def get_cookies(username='2015000001',password='123456abc'):
     headers = {
         "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36 Edg/83.0.478.58"
     }
-
+"""
     action_1 = requests.get(auth_server_url,headers=headers)
     cookies_init = requests.utils.dict_from_cookiejar(action_1.cookies)
     if debug_mode:
@@ -129,7 +129,8 @@ def get_cookies(username='2015000001',password='123456abc'):
     #print(aes_key)
 
     #return
-    
+"""
+"""
     # encrypt passwd ans create params
     #aes_key = "6cYJKrJBZAQzCtr9".encode('utf-8')
     aes_iv = b"6cYJKrJBZAQzCtr9"
@@ -139,7 +140,7 @@ def get_cookies(username='2015000001',password='123456abc'):
     if debug_mode:
         print("Salt: "+aes_key.decode())
         print("Salted password: "+salted_pwd)
-    
+"""    
     #return
     params = {
         "username":username,
@@ -154,7 +155,7 @@ def get_cookies(username='2015000001',password='123456abc'):
 
     if debug_mode:
         print(params)
-
+"""
     #return
     action_2 = requests.post(action_url,params=params,cookies=cookies_init,headers=headers,allow_redirects=False)
     #print(action_2.text)
@@ -241,7 +242,7 @@ def sent_report(cookies):
 
     return json_res['m']
 
-
+"""
 def main(username='',password=''):
 
     cookies_res = {}
@@ -250,13 +251,10 @@ def main(username='',password=''):
     if auth_mode=="PASSWORD":
         print("USE PASSWORD MODE")
         cookies_res = get_cookies(username=stu_id,password=stu_passwd)
-    elif auth_mode=="COOKIES":
-        print("USE COOKIES MODE")
-        cookies_res = stu_varify_cookies
     else:
         print("[ERROR] Unknow auth mode")
         return "Unknow auth mode"
-    
+"""    
     if len(cookies_res)<=0:
         print("[ERROR] Terminated...")
         return "Cookies 无效"
@@ -274,7 +272,8 @@ def main(username='',password=''):
                 retry_max = retry_max-1
                 main()
             else:
-                print("\n[ERROR] [FINAL] 超过最大重试次数，填报失败！")
+"""
+         print("\n[ERROR] [FINAL] 超过最大重试次数，填报失败！")
 
 
 
@@ -286,11 +285,13 @@ if __name__ == "__main__":
     parser.add_argument('--auth_mode', type=str, default="PASSWORD",help="认证模式")
     parser.add_argument('--username', type=str, default=None,help="学工号")
     parser.add_argument('--password', type=str, default=None,help="统一身份认证密码")
+"""
     parser.add_argument('--eai-sess', type=str, default=None,help="认证Cookies")
     parser.add_argument('--UUkey', type=str, default=None,help="认证Cookies")
     args = parser.parse_args()
+"""
     #print("Inpute：", args)
-
+"""
     if args.cli==True:
         print("Load settings from CLI args...")
         auth_mode = args.auth_mode
@@ -302,3 +303,4 @@ if __name__ == "__main__":
         print("Load Setting in file...")
 
     main()
+"""
