@@ -291,7 +291,7 @@ def main(username='',password=''):
 if __name__ == "__main__":
     
     #CLI
-    parser = argparse.ArgumentParser(description='Auto report auth_mode')
+    parser = argparse.ArgumentParser(description='Auto report CLI')
     parser.add_argument('--cli', type=bool, default=False,help="是否使用命令行参数")   #Is call by cli. If false, use settings at the begining of this file.
     parser.add_argument('--auth_mode', type=str, default="PASSWORD",help="认证模式")
     parser.add_argument('--username', type=str, default=None,help="学工号")
@@ -301,7 +301,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     #print("Inpute：", args)
 
-    if args.cli==False:
+    if args.cli=True:
         print("Load settings from CLI args...")
         auth_mode = args.auth_mode
         stu_id = args.username
