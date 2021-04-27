@@ -142,7 +142,7 @@ def get_cookies(username='2015000001',password='123456abc'):
 
     #return
 """
-
+"""
     # encrypt passwd ans create params
     #aes_key = "6cYJKrJBZAQzCtr9".encode('utf-8')
     aes_iv = b"6cYJKrJBZAQzCtr9"
@@ -167,7 +167,7 @@ def get_cookies(username='2015000001',password='123456abc'):
 
     if debug_mode:
         print(params)
-"""
+
     #return
     action_2 = requests.post(action_url,params=params,cookies=cookies_init,headers=headers,allow_redirects=False)
     #print(action_2.text)
