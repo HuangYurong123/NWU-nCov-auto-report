@@ -284,9 +284,8 @@ def main(username='',password=''):
                 retry_max = retry_max-1
                 main()
             else:
-"""
          print("\n[ERROR] [FINAL] 超过最大重试次数，填报失败！")
-
+"""
 
 
 if __name__ == "__main__":
