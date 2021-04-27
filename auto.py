@@ -291,7 +291,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     #print("Inpute：", args)
 
-    if args.cli==True:
+    if args.cli==False:
         print("Load settings from CLI args...")
         auth_mode = args.auth_mode
         stu_id = args.username
