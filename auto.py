@@ -124,7 +124,7 @@ def get_cookies(username='2015000001',password='123456abc'):
     app_cas_login_url = "https://app.nwu.edu.cn/a_nwu/api/sso/cas"
 
     headers = {
-        "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36 Edg/83.0.478.58"
+        "User-Agent":"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; AcooBrowser; .NET CLR 1.1.4322; .NET CLR 2.0.50727)"
     }
 
     action_1 = requests.get(auth_server_url,headers=headers)
