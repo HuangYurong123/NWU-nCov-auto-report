@@ -96,9 +96,7 @@ def main(username='',password=''):
         print("[ERROR] Unknow auth mode")
         return "Unknow auth mode"
     
-    if len(cookies_res)<=0:
-        print("[ERROR] Terminated...")
-        return "Cookies 无效"
+   
     else:
         res = sent_report(cookies=cookies_res)
         if res=="操作成功":
