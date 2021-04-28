@@ -79,11 +79,13 @@ def get_cookies(username='2015000001',password='123456abc'):
         "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36 Edg/83.0.478.58"
     }
 
+    
+    
 def main(username='',password=''):
 
     cookies_res = {}
     global retry_max
-
+  
     if auth_mode=="PASSWORD":
         print("USE PASSWORD MODE")
         cookies_res = get_cookies(username=stu_id,password=stu_passwd)
@@ -93,6 +95,26 @@ def main(username='',password=''):
     else:
         print("[ERROR] Unknow auth mode")
         return "Unknow auth mode"
+    
+    if len(cookies_res)<=0:
+        print("[ERROR] Terminated...")
+        return "Cookies 无效"
+    else:
+        res = sent_report(cookies=cookies_res)
+        if res=="操作成功":
+            print("\n[FINAL] 自动填报成功")
+            return res
+        elif res=="您已上报过" or res=="未到上报时间":
+            print("\n[FINAL] 还不用填报哦~")
+            return res
+        else:
+            if retry_max>0:
+                print("Retry "+str(retry_max)+":")
+                retry_max = retry_max-1
+                main()
+            else:
+                print("\n[ERROR] [FINAL] 超过最大重试次数，填报失败！")
+
 
 
 if __name__ == "__main__":
