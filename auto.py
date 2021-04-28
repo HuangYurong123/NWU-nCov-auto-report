@@ -97,8 +97,7 @@ def main(username='',password=''):
         return "Unknow auth mode"
     
    
-    else:
-        res = sent_report(cookies=cookies_res)
+    res = sent_report(cookies=cookies_res)
         if res=="操作成功":
             print("\n[FINAL] 自动填报成功")
             return res
