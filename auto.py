@@ -89,15 +89,9 @@ def main(username='',password=''):
     if auth_mode=="PASSWORD":
         print("USE PASSWORD MODE")
         cookies_res = get_cookies(username=stu_id,password=stu_passwd)
-    elif auth_mode=="COOKIES":
-        print("USE COOKIES MODE")
-        cookies_res = stu_varify_cookies
     else:
         print("[ERROR] Unknow auth mode")
         return "Unknow auth mode"
-    
-   
-    res = sent_report(cookies=cookies_res)
         if res=="操作成功":
             print("\n[FINAL] 自动填报成功")
             return res
