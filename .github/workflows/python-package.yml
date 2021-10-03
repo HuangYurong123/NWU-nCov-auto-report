@@ -9,7 +9,7 @@ on:
   schedule:
     # Write in UTC+0!
     # For example, 07:05 everyday in UTC+8 equals 23:05 everyday in UTC+0
-    - cron: '1 16,4,22,10 * * *'
+    - cron: '1 5,1 * * *'
 
 jobs:
   build:
